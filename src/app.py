@@ -2,7 +2,7 @@ import dash
 from dash import html
 from dash.dependencies import Input, Output
 import pandas as pd
-from src.pages import page2, page3, page1
+from pages import page2, page3, page1
 
 app = dash.Dash(__name__, suppress_callback_exceptions=True)
 

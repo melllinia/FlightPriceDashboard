@@ -1,7 +1,7 @@
 import pandas as pd
 from dash import dcc, html
 import plotly.express as px
-from src.pages.page1 import city_counts
+from pages.page1 import city_counts
 from data_loader import df
 
 
