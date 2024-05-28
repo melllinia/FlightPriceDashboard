@@ -1,10 +1,7 @@
 from dash import dcc, html
 import pandas as pd
 import plotly.graph_objs as go
-
-# Load and preprocess the data
-df = pd.read_csv('../data/flights_dataset.csv')
-df = df.drop(df.columns[0], axis=1)
+from data_loader import df
 
 # Price is in Indian rupees, let us convert it to USD
 df['price'] = df['price'].div(83).round(2)

@@ -1,7 +1,8 @@
 import dash
 from dash import html
 from dash.dependencies import Input, Output
-from pages import page1, page2, page3
+import pandas as pd
+from src.pages import page2, page3, page1
 
 app = dash.Dash(__name__, suppress_callback_exceptions=True)
 
@@ -54,4 +55,4 @@ def display_page(btn_general, btn_price_days, btn_map):
 
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(host='0.0.0.0', debug=True, port=8090)

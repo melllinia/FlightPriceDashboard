@@ -1,9 +1,8 @@
 from dash import dcc, html
 import plotly.express as px
 import pandas as pd
+from data_loader import df
 
-df = pd.read_csv('../data/flights_dataset.csv')
-df = df.drop(df.columns[0], axis=1)
 
 price_by_day = df.groupby(['days_left'])['price'].mean().reset_index()
 

@@ -1,11 +1,9 @@
 import pandas as pd
 from dash import dcc, html
 import plotly.express as px
+from src.pages.page1 import city_counts
+from data_loader import df
 
-from pages.page1 import city_counts
-
-df = pd.read_csv('../data/flights_dataset.csv')
-df = df.drop(df.columns[0], axis=1)
 
 lat_long = {
     'Mumbai': [19.076090, 72.877426],
