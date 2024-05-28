@@ -50,8 +50,8 @@ def display_page(btn_general, btn_price_days, btn_map):
         return page1.layout
     elif button_id == 'btn-price-days':
         return page2.layout
-    # elif button_id == 'btn-map':
-    #     return page3.layout
+    elif button_id == 'btn-map':
+        return page3.layout
 
 
 if __name__ == '__main__':

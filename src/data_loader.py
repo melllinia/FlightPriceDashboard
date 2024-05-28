@@ -6,7 +6,7 @@ df = None
 def load_data():
     global df
     if df is None:
-        df = pd.read_csv('data/flights_dataset.csv')
+        df = pd.read_csv('data/subsampled_data.csv')
         df = df.drop(df.columns[0], axis=1)
         # Price is in Indian rupees, let us convert it to USD
         df['price'] = df['price'].div(83).round(2)
