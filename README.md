@@ -35,7 +35,7 @@ git clone https://github.com/melllinia/FlightPriceDashboard.git
 cd FlightPriceDashboard
 ```
 
-### Install the Requiremnts
+### Install the Requirements
 ```bash
 pip install -r requirements.txt
 ```
