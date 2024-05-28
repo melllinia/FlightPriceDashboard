@@ -3,8 +3,6 @@ import pandas as pd
 import plotly.graph_objs as go
 from data_loader import df
 
-# Price is in Indian rupees, let us convert it to USD
-df['price'] = df['price'].div(83).round(2)
 
 # Pie chart
 class_counts = df['class'].value_counts()
