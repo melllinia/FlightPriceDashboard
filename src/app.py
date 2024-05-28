@@ -1,12 +1,11 @@
 import dash
 from dash import html
 from dash.dependencies import Input, Output
-import pandas as pd
 from pages import page2, page3, page1
+from pages.page2 import update_output
 
 app = dash.Dash(__name__, suppress_callback_exceptions=True)
 
-# Define main app layout
 app.layout = html.Div([
     html.Div([
         html.H1('Indian Flights Price Analysis and Visualization', style={'textAlign': 'center', 'color': 'navy'}),
@@ -52,6 +51,15 @@ def display_page(btn_general, btn_price_days, btn_map):
         return page2.layout
     elif button_id == 'btn-map':
         return page3.layout
+
+
+# Register the callback for updating the graph based on dropdown selection
+@app.callback(
+    Output('output-graph', 'children'),
+    [Input('plot-type-dropdown', 'value')]
+)
+def update_graph(selected_plot):
+    return update_output(selected_plot)
 
 
 if __name__ == '__main__':

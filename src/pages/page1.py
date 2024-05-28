@@ -41,12 +41,12 @@ fig_violin = go.Figure()
 economy_airlines = df[df["class"] == 'Economy']["airline"].unique()
 for airline in economy_airlines:
     economy_data = df[(df["class"] == 'Economy') & (df["airline"] == airline)]
-    fig_violin.add_trace(go.Violin(y=economy_data["price"], name=f'{airline} - Economy'))
+    fig_violin.add_trace(go.Violin(y=economy_data["price"], name=f'{airline} - Economy', line_color='#332345'))
 
 business_airlines = df[df["class"] == 'Business']["airline"].unique()
 for airline in business_airlines:
     business_data = df[(df["class"] == 'Business') & (df["airline"] == airline)]
-    fig_violin.add_trace(go.Violin(y=business_data["price"], name=f'{airline} - Business'))
+    fig_violin.add_trace(go.Violin(y=business_data["price"], name=f'{airline} - Business', line_color='#38aaac'))
 
 fig_violin.update_layout(title="Airline prices based on companies for Economy and Business class",
                          xaxis=dict(title='Class'),
